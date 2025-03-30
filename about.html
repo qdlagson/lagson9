@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛拉格森生物科技有限公司 | 关于我们</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* 新增通用样式 */
+        body {
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .member-card {
+            width: 100%;
+            max-width: 500px;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+                flex-direction: row;
+            }
+
+            .logo {
+                margin: 0 !important;
+                font-size: 1.1rem;
+            }
+
+            .logo img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: 180px;
+                background: #fff;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+                border: 1px solid #eee;
+                border-radius: 6px;
+                display: none;
+                flex-direction: column;
+                z-index: 9999;
+            }
+
+            .nav-links li {
+                padding: 12px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links li a {
+                color: #333 !important;
+                font-size: 14px;
+                display: block;
+                text-decoration: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: menuSlide 0.3s ease;
+            }
+
+            .member-card {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .member-card p {
+                text-align: left;
+                padding-left: 1.5rem;
+            }
+        }
+
+        @keyframes menuSlide {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏保持不变 -->
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+        <div class="logo" style="margin: 0 auto; display: flex; align-items: center; gap: 10px;">
+            <img src="images/logo.png" alt="公司logo" style="width: 40px; height: 40px;">
+            青岛拉格森生物科技有限公司
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">主页Home</a></li>
+            <li><a href="about.html">关于我们About Us</a></li>
+            <li><a href="products.html">产品中心Products</a></li>
+            <li><a href="contact.html">联系我们Contact us</a></li>
+        </ul>
+    </nav>
+
+    <!-- 页面内容保持不变 -->
+    <section class="about-content">
+        <h2 style="margin-bottom: 1.5rem;">关于我们</h2>
+        <p style="max-width: 800px; margin: 0 auto 2rem;">拉格森生物科技有限公司以中国优质农产品为核心，构建从田间到全球餐桌的一站式供应链。依托中国本土自建工厂的规模化生产实力，及美国、墨西哥海外办事处的本土化服务网络，我们致力于为北美、欧洲客户提供稳定、高效、可持续的辣椒制品与特色农产品解决方案。</p>
+        
+        <div class="team">
+            <div class="member-card">
+                <h4 style="margin: 0 0 1rem;">核心优势</h4>
+                <p>• 产业布局：总部位于中国青岛，拥有自营工厂，并在美国洛杉矶、墨西哥瓜达拉哈拉设立海外办事处</p>
+                <p>• 本土资源：于中国新疆、甘肃、内蒙古等地设有多处承包生产基地，保障原料稳定供应</p>
+                <p>• 专业产品：天然色素（辣椒红、叶黄素）、辣椒系列制品、甜椒及玫瑰茄原料</p>
+                <p>• 品质保障：严格执行ISO22000质量管理体系，先进工艺精制产品</p>
+            </div>
+            <div class="member-card">
+                <h4 style="margin: 0 0 1rem;">全球网络</h4>
+                <p>产品远销欧盟（西班牙、德国、法国）、北美（美国、墨西哥）、东南亚（韩国、马来西亚）等30余个国家和地区，以卓越品质赢得国际认可。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 1.5rem; background: #f5f5f5;">
+        <p style="margin: 0;">&copy; Qingdao Lagson Biotech Co.,Ltd</p>
+    </footer>
+
+    <script>
+        // 增强版汉堡菜单交互
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // 点击页面其他区域关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // 自动高亮当前页面链接
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            const currentPath = window.location.pathname;
+            if(linkPath === currentPath) {
+                link.classList.add('active');
+                link.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

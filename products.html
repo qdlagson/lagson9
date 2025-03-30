@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛拉格森生物科技有限公司 | 产品中心</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 新增产品卡片交互样式 */
+        .product-card {
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::after {
+            content: "查看详情 →";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            background: rgba(0,123,255,0.9);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            transition: bottom 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card:hover::after {
+            bottom: 0;
+        }
+
+        .product-card a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+        <div class="logo" style="margin: 0 auto; display: flex; align-items: center; gap: 10px;">
+            <img src="images/logo.png" alt="公司logo" style="width: 40px; height: 40px;">
+            青岛拉格森生物科技有限公司
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">主页Home</a></li>
+            <li><a href="about.html">关于我们About Us</a></li>
+            <li><a href="products.html">产品中心Products</a></li>
+            <li><a href="contact.html">联系我们Contact us</a></li>
+        </ul>
+    </nav>
+
+    <section class="products" style="padding: 2rem 0;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">我们的产品</h2>
+        <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 0 1rem; max-width: 1200px; margin: 0 auto;">
+            <!-- 色素系列 -->
+            <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+                <a href="products/oleoresins.html">
+                    <img src="images/oleo.jpg" alt="色素产品" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1rem;">
+                        <h4 style="margin: 0.5rem 0;">色素系列（OLEORESINS）</h4>
+                        <p style="color: #666; font-size: 0.9rem;">辣椒红色素/叶黄素</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 辣椒系列 -->
+            <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+                <a href="products/chilli.html">
+                    <img src="images/chilli1.jpg" alt="辣椒粉" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1rem;">
+                        <h4 style="margin: 0.5rem 0;">辣椒系列（CHILLI PRODUCTS）</h4>
+                        <p style="color: #666; font-size: 0.9rem;">提供辣椒干、辣椒粉、辣椒碎等全系列产品</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 甜椒系列 -->
+            <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+                <a href="products/paprika.html">
+                    <img src="images/paprika.jpg" alt="甜椒干" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1rem;">
+                        <h4 style="margin: 0.5rem 0;">甜椒系列（PAPRIKA）</h4>
+                        <p style="color: #666; font-size: 0.9rem;">提供甜椒干、甜椒粉、甜椒籽等产品</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 玫瑰茄 -->
+            <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+                <a href="products/hibiscus.html">
+                    <img src="images/hibiscus.jpg" alt="玫瑰茄" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1rem;">
+                        <h4 style="margin: 0.5rem 0;">玫瑰茄（HIBISCUS）</h4>
+                        <p style="color: #666; font-size: 0.9rem;">天然玫瑰茄原料及制品</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 1.5rem; background: #f5f5f5; text-align: center;">
+        <p style="margin: 0;">&copy; Qingdao Lagson Biotech Co.,Ltd</p>
+    </footer>
+
+    <script>
+        // 增强版自动高亮（支持二级页面）
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            const currentPath = window.location.pathname;
+            const linkPath = new URL(link.href).pathname;
+            
+            // 判断是否在products子目录下
+            const isProductSubpage = currentPath.startsWith('/products/');
+            
+            if (linkPath === currentPath || 
+               (isProductSubpage && link.href.includes('products.html'))) {
+                link.classList.add('active');
+                link.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

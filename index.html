@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛拉格森生物科技有限公司 | 主页</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 新增居中样式 */
+        nav, header, .features, footer {
+            text-align: center;
+        }
+        
+        .nav-links {
+            justify-content: center;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* 移动端菜单居中 */
+        @media (max-width: 768px) {
+            .nav-links {
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+        <div class="logo" style="margin: 0 auto; display: flex; align-items: center; gap: 10px;">
+    <img src="images/logo.png" alt="公司logo" style="width: 40px; height: 40px;">
+    青岛拉格森生物科技有限公司
+</div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" style="display: flex; list-style: none; margin: 0; padding: 0;">
+            <li><a href="index.html">主页Home</a></li>
+            <li><a href="about.html">关于我们About Us</a></li>
+            <li><a href="products.html">产品中心Products</a></li>
+            <li><a href="contact.html">联系我们Contact us</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-image">
+        <img src="images/hero.jpg" alt="国际贸易港口全景图" style="width: 100%;">
+    </div>
+
+    <header style="padding: 2rem 0;">
+        <h1 style="margin: 0;">全球贸易解决方案</h1>
+        <p style="margin: 0.5rem 0 0;">连接世界优质供应商与买家</p>
+    </header>
+
+    <section class="features" style="display: flex; justify-content: center; gap: 2rem; padding: 2rem;">
+        <div class="card" style="padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px; width: 300px;">
+            <h3 style="margin: 0;">跨境采购</h3>
+            <p style="margin: 0.5rem 0 0;">专业全球供应链管理</p>
+        </div>
+        <div class="card" style="padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px; width: 300px;">
+            <h3 style="margin: 0;">贸易咨询</h3>
+            <p style="margin: 0.5rem 0 0;">资深专家团队支持</p>
+        </div>
+    </section>
+
+    <footer style="padding: 1.5rem; background: #f5f5f5;">
+        <p style="margin: 0;">&copy; Qingdao Lagson Biotech Co.,Ltd</p>
+    </footer>
+
+    <script>
+        // 汉堡菜单交互
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // 增强版自动高亮
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            const linkPath = new URL(link.href).pathname.replace(/index\.html$/, '');
+            const currentPath = window.location.pathname.replace(/index\.html$/, '');
+            const isHomePage = currentPath === '/' || currentPath === '/index.html';
+            
+            if((linkPath === currentPath) || (isHomePage && link.href.includes('index.html'))) {
+                link.classList.add('active');
+                link.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
